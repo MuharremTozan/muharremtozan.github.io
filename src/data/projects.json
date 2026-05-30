@@ -1,0 +1,41 @@
+[
+  {
+    "id": "telemetry-engine",
+    "name_en": "Distributed Telemetry Engine",
+    "name_tr": "Dağıtık Telemetri Motoru",
+    "description_en": "Engineered a high-throughput telemetry pipeline capable of processing over 10,000 events per second. Integrated Redis caching and Node.js stream listeners to feed a real-time React analytics dashboard. Optimized frontend layout structures and virtualized lists to handle dense rendering cycles, reducing UI update latency by 45% and maintaining smooth 60 FPS under peak operations.",
+    "description_tr": "Saniyede 10.000'den fazla olayı işleyebilen yüksek kapasiteli bir telemetri hattı tasarlandı. Gerçek zamanlı bir React analitik panelini beslemek için Redis önbellekleme ve Node.js akış (stream) dinleyicileri entegre edildi. Yoğun oluşturma (render) döngülerini işlemek için ön uç yerleşim yapıları ve sanallaştırılmış listeler optimize edilerek kullanıcı arayüzü güncelleme gecikmesi %45 azaltıldı ve yoğun yük altında akıcı 60 FPS performansı korundu.",
+    "techStack": ["React.js", "Node.js", "Redis", "Server-Sent Events", "Vite", "CSS Grid"],
+    "status": "STABLE // 99.9% UP",
+    "links": {
+      "live": "https://telemetry-dashboard.example.com",
+      "source": "https://github.com/mtozan/telemetry-engine"
+    }
+  },
+  {
+    "id": "secure-gateway",
+    "name_en": "Quantum Security Gateway",
+    "name_tr": "Kuantum Güvenlik Geçidi",
+    "description_en": "Designed and deployed a highly secure Enterprise API Gateway serving as the primary authentication and token validation firewall. Standardized OpenID Connect (OIDC) federation workflows with OAuth 2.0. Developed a custom lightweight token decryption cache layer using Node.js, mitigating database lookups by 60% and successfully resisting simulated brute-force and DDoS telemetry rifts.",
+    "description_tr": "Birincil kimlik doğrulama ve jeton (token) doğrulama güvenlik duvarı olarak hizmet veren son derece güvenli bir Kurumsal API Geçidi tasarlandı ve konuşlandırıldı. OAuth 2.0 ile OpenID Connect (OIDC) birleşme iş akışları standartlaştırıldı. Node.js kullanarak özel, hafif bir jeton çözme önbellek katmanı geliştirilerek veritabanı sorguları %60 azaltıldı ve simüle edilmiş kaba kuvvet (brute-force) ile DDoS siber saldırılarına başarıyla direnildi.",
+    "techStack": ["Node.js", "Express", "OIDC / OAuth 2.0", "Redis", "Docker", "Linux Shell"],
+    "status": "SECURED // COMPLIANT",
+    "links": {
+      "live": "https://security-gateway.example.com",
+      "source": "https://github.com/mtozan/secure-gateway"
+    }
+  },
+  {
+    "id": "canvas-simulator",
+    "name_en": "Vector Graphics Simulator",
+    "name_tr": "Vektör Grafik Simülatörü",
+    "description_en": "Developed a high-performance vector rendering canvas engine simulating particle collision vectors and sub-atomic visual layers. Built using raw HTML5 Canvas API coupled with lightweight math calculation loops. Integrated Framer Motion coordinate interpolations in React to support interactive mouse-attraction anomalies, while maintaining zero layout thrashing on low-end mobile devices.",
+    "description_tr": "Parçacık çarpışma vektörlerini ve atom altı görsel katmanları simüle eden yüksek performanslı bir vektör işleme tuval (canvas) motoru geliştirildi. Hafif matematiksel hesaplama döngüleriyle birleştirilmiş ham HTML5 Canvas API kullanılarak inşa edildi. Etkileşimli fare çekim anomalilerini desteklemek için React'te Framer Motion koordinat enterpolasyonları entegre edildi ve düşük seviyeli mobil cihazlarda sıfır düzen titremesi (layout thrashing) sağlandı.",
+    "techStack": ["React.js", "HTML5 Canvas", "Framer Motion", "Vite", "Pico CSS"],
+    "status": "ACTIVE // FLUID 60FPS",
+    "links": {
+      "live": "https://vector-graphics.example.com",
+      "source": "https://github.com/mtozan/canvas-simulator"
+    }
+  }
+]
