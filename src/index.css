@@ -1,0 +1,476 @@
+/* ==========================================================================
+   Cybernetic Design System & Core Themes - The Dimensional Chronology
+   ========================================================================== */
+
+/* Base framework import */
+@import "@picocss/pico/css/pico.min.css";
+
+/* Core design tokens */
+:root {
+  --bg-space: #060913;
+  --bg-panel: #0b0f19;
+  --bg-panel-border: rgba(67, 226, 198, 0.15);
+  
+  --primary-glow: #43e2c6;       /* Neon portal green */
+  --primary-glow-rgb: 67, 226, 198;
+  --accent-cyan: #06b6d4;        /* Electric cyan */
+  --accent-cyan-rgb: 6, 182, 212;
+  
+  --text-main: #f8fafc;          /* High contrast off-white */
+  --text-muted: #94a3b8;         /* Cool gray */
+  --text-dimmed: #64748b;
+  
+  --terminal-log: #10b981;
+  --terminal-unstable: #f59e0b;
+  
+  --sidebar-width: 280px;
+  --font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Global resets & scroll physics */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  background-color: var(--bg-space) !important;
+  color: var(--text-main) !important;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-space) !important;
+  color: var(--text-main) !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+  line-height: 1.6;
+}
+
+/* Accessible WCAG AA Keyboard Focus outline */
+*:focus-visible {
+  outline: 3px solid var(--primary-glow) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 15px rgba(67, 226, 198, 0.5) !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-space);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Global typography overrides for professional clarity */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   Page Grid Layouts (Sidebar Nav on Left, Content Panel on Right)
+   ========================================================================== */
+.app-container {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.main-content {
+  padding: 3rem 4rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Custom content section dividers */
+.page-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.08);
+}
+.page-section:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Cybernetic UI Panels & Telemetry Status Cards
+   ========================================================================== */
+.cyber-card {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--bg-panel-border) !important;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-card:hover {
+  border-color: rgba(67, 226, 198, 0.4) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(67, 226, 198, 0.05),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* CRT monitor overlay grid filter */
+.crt-effect::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Glowing diagnostic header tag */
+.telemetry-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--terminal-log);
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.telemetry-status.unstable {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--terminal-unstable);
+}
+
+/* ==========================================================================
+   Micro-Animations (Anti-gravity floating, Spin Portal, Outline Pulse)
+   ========================================================================== */
+
+/* Antigravity floating motion */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.float-effect {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Neon glow pulse */
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 5px rgba(67, 226, 198, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(67, 226, 198, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(67, 226, 198, 0.2); }
+}
+.glow-pulse-effect {
+  animation: glow-pulse 3s infinite;
+}
+
+/* Portal rotation */
+@keyframes portal-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-effect {
+  animation: portal-spin 20s linear infinite;
+}
+.spin-effect-hover:hover {
+  animation: portal-spin 5s linear infinite;
+}
+
+/* Selected project flash animation */
+@keyframes outline-flash {
+  0% { border-color: rgba(67, 226, 198, 1); box-shadow: 0 0 25px rgba(67, 226, 198, 0.6); }
+  100% { border-color: var(--bg-panel-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+}
+.project-card-flash {
+  animation: outline-flash 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ==========================================================================
+   Horizontal Portal Chronology Timeline UI
+   ========================================================================== */
+.portal-timeline-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  background: rgba(11, 15, 25, 0.4);
+  border: 1px solid rgba(6, 182, 212, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Circuit trace base line */
+.portal-timeline-line {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+              rgba(6, 182, 212, 0) 0%, 
+              rgba(6, 182, 212, 0.5) 15%, 
+              rgba(67, 226, 198, 0.8) 50%, 
+              rgba(6, 182, 212, 0.5) 85%, 
+              rgba(6, 182, 212, 0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Horizontal scroll overflow box */
+.portal-gallery {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  padding: 1rem 3rem 2rem 3rem;
+  z-index: 2;
+  position: relative;
+  scrollbar-width: none; /* Firefox hide */
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portal-gallery::-webkit-scrollbar {
+  display: none; /* Chrome/Safari hide */
+}
+
+/* Left and right gradient fade overlays to hint at offscreen portals */
+.portal-timeline-container::before,
+.portal-timeline-container::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 80px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.portal-timeline-container::before {
+  left: 1px;
+  background: linear-gradient(to right, #060913 15%, rgba(6, 9, 19, 0));
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.portal-timeline-container::after {
+  right: 1px;
+  background: linear-gradient(to left, #060913 15%, rgba(6, 9, 19, 0));
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* The portal selector node */
+.portal-node {
+  flex: 0 0 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  scroll-snap-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hologram light projector cone */
+.portal-cone {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  margin-bottom: 0.75rem;
+  z-index: 2;
+}
+
+.portal-cone::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  height: 60px;
+  background: linear-gradient(to top, rgba(67, 226, 198, 0.25), rgba(6, 182, 212, 0));
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.portal-node:hover .portal-cone::after {
+  background: linear-gradient(to top, rgba(67, 226, 198, 0.45), rgba(6, 182, 212, 0));
+}
+
+/* The actual portal graphic disc */
+.portal-disc {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  background: radial-gradient(circle, #000 10%, rgba(67, 226, 198, 0.4) 40%, rgba(6, 182, 212, 0.9) 75%);
+  border: 1px solid var(--primary-glow);
+  box-shadow: 0 0 15px rgba(67, 226, 198, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-node:hover .portal-disc {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(67, 226, 198, 0.7), 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+.portal-icon-svg {
+  color: var(--primary-glow);
+  z-index: 4;
+  filter: drop-shadow(0 0 3px rgba(67, 226, 198, 0.8));
+  transition: transform 0.3s ease;
+}
+
+.portal-node:hover .portal-icon-svg {
+  transform: scale(1.1);
+}
+
+/* Interactive timeline point */
+.portal-timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-space);
+  border: 2px solid var(--accent-cyan);
+  margin-top: 0.5rem;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.portal-node:hover .portal-timeline-dot {
+  background: var(--primary-glow);
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.portal-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  transition: color 0.3s;
+  pointer-events: none;
+  max-width: 140px;
+  word-wrap: break-word;
+}
+
+.portal-node:hover .portal-label {
+  color: var(--primary-glow);
+  text-shadow: 0 0 8px rgba(67, 226, 198, 0.4);
+}
+
+/* ==========================================================================
+   Responsive Adaptation (Mobile Viewport Collapse to Vertical Timeline)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .app-container {
+    grid-template-columns: 1fr; /* Sidebar collapses */
+  }
+
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Portal timeline horizontal container converts into a responsive vertical flow */
+  .portal-timeline-container {
+    padding: 1.5rem;
+  }
+  
+  .portal-timeline-line {
+    display: none; /* Hide horizontal trace */
+  }
+
+  .portal-timeline-container::before,
+  .portal-timeline-container::after {
+    display: none; /* Hide overlays */
+  }
+
+  .portal-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .portal-node {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 320px;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 1.5rem;
+    background: rgba(11, 15, 25, 0.6);
+    border: 1px solid rgba(6, 182, 212, 0.1);
+    border-radius: 12px;
+    padding: 0.75rem 1.2rem;
+  }
+
+  .portal-cone {
+    margin-bottom: 0;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .portal-disc {
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+  }
+
+  .portal-cone::after {
+    display: none; /* Hide light cone */
+  }
+
+  .portal-timeline-dot {
+    display: none; /* Hide horizontal timeline dots */
+  }
+
+  .portal-label {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    max-width: none;
+  }
+}
