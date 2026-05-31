@@ -110,8 +110,6 @@ h1, h2, h3, h4, h5, h6 {
    Page Grid Layouts (Sidebar Nav on Left, Content Panel on Right)
    ========================================================================== */
 .app-container {
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -119,18 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-content {
   padding: 3rem 4rem;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  /* leave space for the fixed sidebar */
   margin-left: var(--sidebar-width);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 /* On small screens the sidebar collapses, remove the left offset */
 @media (max-width: 992px) {
   .main-content {
     margin-left: 0;
+    width: 100%;
     padding: 2rem 1.5rem;
   }
 }
@@ -438,10 +434,6 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 @media (max-width: 992px) {
-  .app-container {
-    grid-template-columns: 1fr; /* Sidebar collapses */
-  }
-
   .main-content {
     padding: 2rem 1.5rem;
   }
