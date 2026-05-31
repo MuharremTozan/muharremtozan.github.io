@@ -6,8 +6,8 @@ export default function ContactCommLink({ ui, currentLang }) {
   
   // Professional details
   const emailAddress = "mtozan.dev@gmail.com"; // Professional email contact
-  const linkedinUrl = "https://linkedin.com/in/your-profile"; // Custom placeholder
-  const githubUrl = "https://github.com/your-username"; // Custom placeholder
+  const linkedinUrl = "https://www.linkedin.com/in/muharrem-tozan-3658b1222/"; // Updated to user's LinkedIn
+  const githubUrl = "https://github.com/MuharremTozan"; // Updated to user's GitHub
 
   // Pre-seeded mail parameters based on language
   const mailSubject = currentLang === 'en' 
