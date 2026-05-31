@@ -1,5 +1,32 @@
 /* Consolidated component styles extracted from inline <style> blocks */
 
+/* Utilities: consolidated repeated rules to reduce duplication */
+
+/* Gradient titles used across multiple components */
+.timeline-section-title,
+.skills-section-title,
+.contact-section-title,
+.hero-greeting,
+.category-title,
+.logo-glitch {
+  background: linear-gradient(90deg, var(--text-main) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card interaction baseline for consistent transitions */
+.schematic-card,
+.project-detail-card,
+.comm-card,
+.portal-disc,
+.portal-icon-svg,
+.telemetry-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Shared card padding is provided by .cyber-card in index.css; individual components should not duplicate. */
+
+
 /* App.jsx responsive correction */
 @media (max-width: 992px) {
   .main-content {
@@ -238,9 +265,6 @@
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(90deg, var(--text-main) 0%, var(--text-muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
 }
 .timeline-section-sub { font-size: 1rem; color: var(--text-muted); }
@@ -261,10 +285,10 @@
 @keyframes ping { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
 .telemetry-log-txt { font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; color: var(--primary-glow); letter-spacing: 0.2em; text-shadow: 0 0 8px rgba(67, 226, 198, 0.4); }
 .hero-content { margin-bottom: 3.5rem; }
-.hero-greeting { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--text-main) 30%, var(--text-muted) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+.hero-greeting { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
 .hero-lead { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; line-height: 1.7; }
 .telemetry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-.telemetry-card { padding: 1.25rem; }
+.telemetry-card { }
 .stat-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
 .stat-title { font-family: 'Courier New', monospace; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; }
 .stat-value { font-size: 0.95rem; font-weight: bold; font-family: var(--font-family); color: var(--text-main); letter-spacing: 0.02em; }
@@ -272,7 +296,7 @@
 
 /* SkillsSchematics.jsx styles */
 .skills-schematic-section { padding-bottom: 3rem; }
-.skills-section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(90deg, var(--text-main) 0%, var(--text-muted) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+.skills-section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 .skills-section-sub { font-size: 1rem; color: var(--text-muted); }
 .schematic-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
 .schematic-card { padding: 2rem; position: relative; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
@@ -294,7 +318,7 @@
 .blueprint-active .node-label { color: var(--text-main); }
 
 /* ProjectDetailCard.jsx styles */
-.project-detail-card { margin-bottom: 2.5rem; padding: 2.5rem; transition: transform 0.3s ease, border-color 0.3s ease; }
+.project-detail-card { margin-bottom: 2.5rem; }
 .project-telemetry-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(6, 182, 212, 0.1); padding-bottom: 1rem; margin-bottom: 1.5rem; }
 .dimension-slug { font-family: 'Courier New', monospace; font-size: 0.65rem; color: var(--text-dimmed); font-weight: 700; letter-spacing: 0.05em; }
 .project-title { font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-bottom: 1rem; letter-spacing: -0.01em; }
@@ -314,10 +338,10 @@
 
 /* ContactCommLink.jsx styles */
 .contact-comm-section { padding-bottom: 4rem; }
-.contact-section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(90deg, var(--text-main) 0%, var(--text-muted) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+.contact-section-title { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 .contact-section-sub { font-size: 1rem; color: var(--text-muted); }
 .comm-gateway-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-.comm-card { display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem; text-decoration: none; position: relative; }
+.comm-card { display: flex; align-items: center; gap: 1.25rem; text-decoration: none; position: relative; }
 .comm-icon-sphere { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-main); z-index: 2; transition: transform 0.3s; }
 .comm-icon-sphere.linkedin { background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--accent-cyan); }
 .comm-icon-sphere.github { background: rgba(67, 226, 198, 0.08); border: 1px solid rgba(67, 226, 198, 0.3); color: var(--primary-glow); }
@@ -326,7 +350,7 @@
 .comm-title { font-size: 1.1rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.05em; }
 .comm-status-meta { font-family: 'Courier New', monospace; font-size: 0.6rem; font-weight: bold; letter-spacing: 0.05em; color: var(--text-dimmed); margin-top: 0.15rem; }
 .comm-card:hover .comm-status-meta { color: var(--text-muted); }
-.mail-cockpit-box { display: flex; gap: 2rem; align-items: flex-start; padding: 2.5rem; background: linear-gradient(135deg, rgba(6, 182, 212, 0.02) 0%, rgba(0, 0, 0, 0) 100%); }
+.mail-cockpit-box { display: flex; gap: 2rem; align-items: flex-start; background: linear-gradient(135deg, rgba(6, 182, 212, 0.02) 0%, rgba(0, 0, 0, 0) 100%); }
 .mail-icon-node { width: 56px; height: 56px; border-radius: 12px; background: rgba(6, 182, 212, 0.06); border: 1px solid rgba(6, 182, 212, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); flex-shrink: 0; }
 @keyframes pulse-icon { 0%, 100% { opacity: 0.7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
 .mail-pulse-icon { animation: pulse-icon 3s ease-in-out infinite; }
