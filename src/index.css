@@ -123,6 +123,16 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  /* leave space for the fixed sidebar */
+  margin-left: var(--sidebar-width);
+}
+
+/* On small screens the sidebar collapses, remove the left offset */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+  }
 }
 
 /* Custom content section dividers */
