@@ -52,31 +52,6 @@ export default function PortalTimeline({ projects, onSelectProject, ui, currentL
         </div>
       </div>
 
-      {/* Local timeline helper styles */}
-      <style>{`
-        .experience-timeline-section {
-          padding-bottom: 2rem;
-        }
-
-        .section-intro {
-          margin-bottom: 2rem;
-        }
-
-        .timeline-section-title {
-          font-size: 2rem;
-          font-weight: 800;
-          letter-spacing: -0.02em;
-          background: linear-gradient(90deg, var(--text-main) 0%, var(--text-muted) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin-bottom: 0.5rem;
-        }
-
-        .timeline-section-sub {
-          font-size: 1rem;
-          color: var(--text-muted);
-        }
-      `}</style>
-    </div>
-  );
+      {/* Local timeline helper styles moved to src/components.css */}
+    </div>  );
 }

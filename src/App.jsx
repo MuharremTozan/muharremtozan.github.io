@@ -123,13 +123,6 @@ export default function App() {
       )}
 
       {/* Responsive layout corrections */}
-      <style>{`
-        @media (max-width: 992px) {
-          .main-content {
-            margin-top: 60px; /* Offset mobile sticky header height */
-          }
-        }
-      `}</style>
     </>
   );
 }
