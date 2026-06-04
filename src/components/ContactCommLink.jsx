@@ -73,7 +73,7 @@ export default function ContactCommLink({ ui, currentLang }) {
       </div>
 
       {/* Pre-seeded email cockpit box */}
-      <div className="mail-cockpit-box cyber-card crt-effect">
+      <div className="mail-cockpit-box cyber-card">
         <div className="mail-icon-node">
           <Mail size={28} className="mail-pulse-icon" />
         </div>

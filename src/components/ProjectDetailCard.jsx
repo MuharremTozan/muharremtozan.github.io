@@ -8,7 +8,7 @@ export default function ProjectDetailCard({ project, ui, currentLang, isFocused 
   return (
     <article
       id={`project-card-${project.id}`}
-      className={`project-detail-card cyber-card crt-effect ${isFocused ? 'project-card-flash' : ''}`}
+      className={`project-detail-card cyber-card ${isFocused ? 'project-card-flash' : ''}` }
       style={{
         scrollMarginTop: '100px', // Prevents sticking directly under top mobile header
       }}
