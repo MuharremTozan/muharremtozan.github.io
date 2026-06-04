@@ -332,7 +332,7 @@ To prevent bloating vendor build packages, both libraries are imported using mod
 
 ### Search Engine Optimization (SEO) & Meta Systems
 The HTML document header will house descriptive indexing descriptors to optimize search engines crawls:
-*   **Semantic Page Title:** A concise title structure, e.g., `<title>Your Name | Software Engineer Portfolio</title>`.
+*   **Semantic Page Title:** A concise title structure, e.g., `<title>Muharrem Tozan | Software Engineer Portfolio</title>`.
 *   **Search Snippet Description:** A compelling meta description under 155 characters highlighting your core technologies and experience.
 *   **Search Crawling Robots:** `<meta name="robots" content="index, follow" />` to authorize deep site crawling.
 
