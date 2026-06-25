@@ -1,16 +1,50 @@
-# React + Vite
+# The Dimensional Chronology
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Rick & Morty themed software engineering portfolio built with React 19 and Vite 8. Features an interactive portal timeline, bilingual English/Turkish support, and a cybernetic dashboard UI.
 
-Currently, two official plugins are available:
+[![Live Site](https://img.shields.io/badge/demo-muharremtozan.github.io-43e2c6?style=flat-square)](https://muharremtozan.github.io)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Screenshots
 
-## React Compiler
+![Hero Section](public/hero-section.png)
+*Dashboard with telemetry status cards and system diagnostics*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Portal Timeline](public/portal-timeline.png)
+*Horizontal scrollable portal gallery for project navigation*
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Portal Timeline** — horizontal scrollable project gallery with hologram-style portal nodes
+- **Bilingual UI** — English/Turkish locale switching persisted in localStorage
+- **Skills Schematics** — interactive circuit-board grid with hover-activated light paths
+- **Session Splash Screen** — animated portal entry effect shown once per session
+- **IntersectionObserver Nav** — sidebar tracking that highlights active sections on scroll
+- **Telemetry Dashboard** — live system status cards with cybernetic aesthetic
+- **Responsive** — sidebar collapses to mobile header on smaller viewports
+- **Privacy-First** — zero analytics, fully static, no external data collection
+
+## Tech Stack
+
+- **React 19** + **Vite 8**
+- **Pico CSS** (minimalist CSS framework)
+- **Framer Motion** (animations)
+- **Lucide React** (icons)
+- **GitHub Pages** (hosting)
+- **GitHub Actions OIDC** (CI/CD)
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+The site is deployed via GitHub Actions using OIDC authentication — no personal access tokens or SSH keys required. Every push to `main` triggers an automatic build and deploy to GitHub Pages.
