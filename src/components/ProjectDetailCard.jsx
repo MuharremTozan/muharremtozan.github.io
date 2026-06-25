@@ -1,9 +1,10 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Star } from 'lucide-react';
 
 export default function ProjectDetailCard({ project, ui, currentLang, isFocused }) {
   const name = currentLang === 'en' ? project.name_en : project.name_tr;
   const description = currentLang === 'en' ? project.description_en : project.description_tr;
+  const status = currentLang === 'tr' && project.status_tr ? project.status_tr : project.status;
 
   return (
     <article
@@ -16,7 +17,7 @@ export default function ProjectDetailCard({ project, ui, currentLang, isFocused 
       {/* Telemetry metadata status row */}
       <div className="project-telemetry-header">
         <span className={`telemetry-status ${project.status.toLowerCase().includes('unstable') ? 'unstable' : ''}`}>
-          {ui.proj_status}: {project.status}
+          {ui.proj_status}: {status}
         </span>
         <span className="dimension-slug">REF // {project.id.toUpperCase()}</span>
       </div>
@@ -38,6 +39,12 @@ export default function ProjectDetailCard({ project, ui, currentLang, isFocused 
               </span>
             ))}
           </div>
+          {project.stars && (
+            <div className="stars-row">
+              <Star size={14} className="star-icon" />
+              <span className="stars-count">{project.stars} GitHub Stars</span>
+            </div>
+          )}
         </div>
 
         <div className="gateway-links">

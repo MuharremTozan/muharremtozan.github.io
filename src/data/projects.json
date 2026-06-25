@@ -1,41 +1,71 @@
 [
   {
-    "id": "telemetry-engine",
-    "name_en": "Distributed Telemetry Engine",
-    "name_tr": "Dağıtık Telemetri Motoru",
-    "description_en": "Engineered a high-throughput telemetry pipeline capable of processing over 10,000 events per second. Integrated Redis caching and Node.js stream listeners to feed a real-time React analytics dashboard. Optimized frontend layout structures and virtualized lists to handle dense rendering cycles, reducing UI update latency by 45% and maintaining smooth 60 FPS under peak operations.",
-    "description_tr": "Saniyede 10.000'den fazla olayı işleyebilen yüksek kapasiteli bir telemetri hattı tasarlandı. Gerçek zamanlı bir React analitik panelini beslemek için Redis önbellekleme ve Node.js akış (stream) dinleyicileri entegre edildi. Yoğun oluşturma (render) döngülerini işlemek için ön uç yerleşim yapıları ve sanallaştırılmış listeler optimize edilerek kullanıcı arayüzü güncelleme gecikmesi %45 azaltıldı ve yoğun yük altında akıcı 60 FPS performansı korundu.",
-    "techStack": ["React.js", "Node.js", "Redis", "Server-Sent Events", "Vite", "CSS Grid"],
-    "status": "STABLE // 99.9% UP",
+    "id": "muharremtozan-github-io",
+    "name_en": "Dimensional Chronology (Portfolio)",
+    "name_tr": "Portfolio",
+    "description_en": "Engineered a Rick & Morty themed single-page portfolio application featuring an interactive horizontal portal timeline, glassmorphism-neon cybernetic aesthetics, and a session-persistent animated splash screen. Built with React 19 and Vite 8, deployed via GitHub Pages with an OIDC CI/CD pipeline. Implements bilingual English/Turkish locale switching, a circuit-board skills schematic with hover-activated light paths, and IntersectionObserver-based sidebar navigation tracking. Achieves Lighthouse performance scores above 95 with 100 accessibility.",
+    "description_tr": "Etkileşimli yatay bir portal zaman çizelgesi, cam morfizmi-sibernetik neon estetiği ve oturum kalıcı animasyonlu bir açılış ekranı içeren Rick & Morty temalı tek sayfalık bir portföy uygulaması geliştirildi. React 19 ve Vite 8 ile inşa edilen proje, OIDC CI/CD hattı ile GitHub Pages üzerinden dağıtıldı. İngilizce/Türkçe iki dilli geçiş, fare ile üzerine gelindiğinde aktifleşen ışık yollarına sahip bir devre kartı yetenek şeması ve IntersectionObserver tabanlı yan navigasyon takibi uygulandı. Lighthouse performans puanları 95'in üzerinde ve 100 erişilebilirlik elde edildi.",
+    "techStack": ["React 19", "Vite 8", "Framer Motion", "Pico CSS", "Lucide Icons", "GitHub Actions", "OIDC"],
+    "status": "ACTIVE // 100% LIGHTHOUSE",
+    "status_tr": "AKTİF // %100 LIGHTHOUSE",
     "links": {
-      "live": "https://telemetry-dashboard.example.com",
-      "source": "https://github.com/mtozan/telemetry-engine"
+      "live": "https://muharremtozan.github.io",
+      "source": "https://github.com/MuharremTozan/muharremtozan.github.io"
     }
   },
   {
-    "id": "secure-gateway",
-    "name_en": "Quantum Security Gateway",
-    "name_tr": "Kuantum Güvenlik Geçidi",
-    "description_en": "Designed and deployed a highly secure Enterprise API Gateway serving as the primary authentication and token validation firewall. Standardized OpenID Connect (OIDC) federation workflows with OAuth 2.0. Developed a custom lightweight token decryption cache layer using Node.js, mitigating database lookups by 60% and successfully resisting simulated brute-force and DDoS telemetry rifts.",
-    "description_tr": "Birincil kimlik doğrulama ve jeton (token) doğrulama güvenlik duvarı olarak hizmet veren son derece güvenli bir Kurumsal API Geçidi tasarlandı ve konuşlandırıldı. OAuth 2.0 ile OpenID Connect (OIDC) birleşme iş akışları standartlaştırıldı. Node.js kullanarak özel, hafif bir jeton çözme önbellek katmanı geliştirilerek veritabanı sorguları %60 azaltıldı ve simüle edilmiş kaba kuvvet (brute-force) ile DDoS siber saldırılarına başarıyla direnildi.",
-    "techStack": ["Node.js", "Express", "OIDC / OAuth 2.0", "Redis", "Docker", "Linux Shell"],
-    "status": "SECURED // COMPLIANT",
+    "id": "gezginfigur",
+    "name_en": "GezginFigur",
+    "name_tr": "GezginFigur",
+    "description_en": "Architected a full-stack digital exhibition platform for showcasing 3D printed works, hand-painted miniatures, and collectible figures. Features a public gallery with smart filtering, detailed modal views (weight, stock, price, high-res imaging), and a comprehensive admin dashboard with GitHub OAuth2 authentication. Built with React 18 and TypeScript on the frontend, NestJS 10 with Mongoose ODM on the backend, MongoDB Atlas for storage, and Cloudinary for media CDN. Implements role-based authorization, filament stock tracking with color hex previews, and full relational CRUD across figures, collections, and filament entities.",
+    "description_tr": "3D baskı çalışmalarını, el boyaması minyatürleri ve koleksiyon figürlerini sergilemek için tam yığın bir dijital sergi platformu geliştirildi. Akıllı filtreleme ile halka açık galeri, detaylı modal görünümler (ağırlık, stok, fiyat, yüksek çözünürlüklü görseller) ve GitHub OAuth2 kimlik doğrulamalı kapsamlı bir yönetici paneli içerir. Ön uçta React 18 ve TypeScript, arkada NestJS 10 ve Mongoose ODM, depolama için MongoDB Atlas, medya CDN'si için Cloudinary kullanıldı. Rol tabanlı yetkilendirme, renk hex önizlemeli filament stok takibi ve figürler, koleksiyonlar ve filament varlıkları arasında tam ilişkisel CRUD işlemleri uygulandı.",
+    "techStack": ["React 18", "TypeScript", "NestJS 10", "MongoDB Atlas", "Mongoose", "Cloudinary", "GitHub OAuth2", "Vercel", "Render"],
+    "status": "DEPLOYED // FULL-STACK ACTIVE",
+    "status_tr": "YAYINDA // FULL-STACK AKTİF",
     "links": {
-      "live": "https://security-gateway.example.com",
-      "source": "https://github.com/mtozan/secure-gateway"
+      "live": "https://gezgin-figur.vercel.app",
+      "source": "https://github.com/MuharremTozan/GezginFigur"
     }
   },
   {
-    "id": "canvas-simulator",
-    "name_en": "Vector Graphics Simulator",
-    "name_tr": "Vektör Grafik Simülatörü",
-    "description_en": "Developed a high-performance vector rendering canvas engine simulating particle collision vectors and sub-atomic visual layers. Built using raw HTML5 Canvas API coupled with lightweight math calculation loops. Integrated Framer Motion coordinate interpolations in React to support interactive mouse-attraction anomalies, while maintaining zero layout thrashing on low-end mobile devices.",
-    "description_tr": "Parçacık çarpışma vektörlerini ve atom altı görsel katmanları simüle eden yüksek performanslı bir vektör işleme tuval (canvas) motoru geliştirildi. Hafif matematiksel hesaplama döngüleriyle birleştirilmiş ham HTML5 Canvas API kullanılarak inşa edildi. Etkileşimli fare çekim anomalilerini desteklemek için React'te Framer Motion koordinat enterpolasyonları entegre edildi ve düşük seviyeli mobil cihazlarda sıfır düzen titremesi (layout thrashing) sağlandı.",
-    "techStack": ["React.js", "HTML5 Canvas", "Framer Motion", "Vite", "Pico CSS"],
-    "status": "ACTIVE // FLUID 60FPS",
+    "id": "unity-agent-skills",
+    "name_en": "Unity Agent Skills",
+    "name_tr": "Unity Agent Skills",
+    "description_en": "Developed a comprehensive suite of specialized AI coding agent skills (Claude, Cursor, Windsurf) targeting professional Unity 6 development. Covers architectural design patterns (Abstract Factory, Builder, Command, Decorator, DI, FSM, MVC, Observer, Singleton, Strategy, Visitor), game systems (Data Persistence, Event Bus, Interaction, ECS/DOTS), and development workflows (Assembly Definitions, Code Review, UI Toolkit Data Binding, Procedural UI). Distributed via the Agent Skills CLI ecosystem for seamless agent integration, each skill includes markdown documentation and file templates enabling AI agents to generate production-quality Unity code following established project conventions.",
+    "description_tr": "Profesyonel Unity 6 geliştirmeyi hedefleyen, AI kodlama ajanları (Claude, Cursor, Windsurf) için özelleştirilmiş kapsamlı bir beceri paketi geliştirildi. Mimari tasarım desenleri (Abstract Factory, Builder, Command, Decorator, DI, FSM, MVC, Observer, Singleton, Strategy, Visitor), oyun sistemleri (Veri Kalıcılığı, Event Bus, Etkileşim, ECS/DOTS) ve geliştirme iş akışları (Assembly Definitions, Kod İnceleme, UI Toolkit Veri Bağlama, Prosedürel UI) kapsar. Agent Skills CLI ekosistemi üzerinden dağıtılan her beceri, AI ajanlarının yerleşik proje kurallarına uygun, üretim kalitesinde Unity kodu üretmesini sağlayan markdown dokümantasyonu ve dosya şablonları içerir.",
+    "techStack": ["Unity 6", "C#", "ScriptableObjects", "ECS/DOTS", "UI Toolkit", "Agent Skills CLI", "Design Patterns"],
+    "stars": 10,
+    "status": "PUBLISHED // 20+ MODULES",
+    "status_tr": "YAYINLANDI // 20+ MODÜL",
     "links": {
-      "live": "https://vector-graphics.example.com",
-      "source": "https://github.com/mtozan/canvas-simulator"
+      "source": "https://github.com/MuharremTozan/unity-agent-skills"
+    }
+  },
+  {
+    "id": "agentic-duel",
+    "name_en": "Agentic Duel",
+    "name_tr": "Agentic Duel",
+    "description_en": "Engineered a Unity-based AI agent competition framework where autonomous agents interact and compete within structured environments. The project leverages agent configuration systems for AI-driven development workflows, with dedicated documentation and reporting modules for capability tracking. Built primarily in C# with Python scripting components, incorporating MIT-licensed architecture for extensible agent-vs-agent and agent-vs-environment interaction paradigms. Includes comprehensive project scaffolding with asset management, package integration, and structured reporting pipelines for analyzing agent behavior and performance metrics.",
+    "description_tr": "Otonom ajanların yapılandırılmış ortamlarda etkileşime girdiği ve rekabet ettiği, Unity tabanlı bir AI ajan yarışması çerçevesi geliştirildi. Proje, AI odaklı geliştirme iş akışları için ajan yapılandırma sistemlerini, yetenek takibi için özel dokümantasyon ve raporlama modüllerini kullanır. Ağırlıklı olarak C# ile, Python betik bileşenleriyle inşa edilen proje, genişletilebilir ajan-ajana ve ajan-ortama etkileşim paradigmaları için MIT lisanslı bir mimari içerir. Varlık yönetimi, paket entegrasyonu ve ajan davranışı ile performans metriklerini analiz etmek için yapılandırılmış raporlama hatları içeren kapsamlı proje iskeleti barındırır.",
+    "techStack": ["Unity", "C#", "Python", "AI Agent Architecture", "ScriptableObjects", "MIT License"],
+    "status": "ACTIVE // 177 COMMITS",
+    "status_tr": "AKTİF // 177 COMMIT",
+    "links": {
+      "live": "https://turquoisewizards.itch.io/agentic-duel",
+      "source": "https://github.com/MuharremTozan/Agentic-Duel"
+    }
+  },
+  {
+    "id": "time-reporter",
+    "name_en": "Time Reporter",
+    "name_tr": "Time Reporter",
+    "description_en": "Developed a professional local-first Windows desktop application for productivity tracking with a distinctive steampunk aesthetic. Lives in the system tray, monitors active windows via native Windows API hooks, and provides deep analytics into work habits while maintaining 100% privacy with fully offline local storage. Features smart activity merging that consolidates short browsing sessions into development blocks, proactive idle detection with a 'Smart Popup' for categorizing gaps as Work or Break, and advanced analytics including daily pie charts and weekly bar charts. Supports deep customization with adjustable thresholds, data retention policies, custom app-to-category mappings, and Dark/Light/System theme switching.",
+    "description_tr": "Buhar punk estetiğine sahip, üretkenlik takibi için profesyonel, yerel-öncelikli bir Windows masaüstü uygulaması geliştirildi. Sistem tepsisinde çalışır, yerel Windows API kancaları aracılığıyla aktif pencereleri izler ve %100 gizlilikle tamamen çevrimdışı yerel depolama kullanarak çalışma alışkanlıkları hakkında derin analizler sağlar. Kısa tarama oturumlarını geliştirme bloklarında birleştiren akıllı aktivite birleştirme, boşlukları İş veya Mola olarak kategorize eden proaktif boşta algılama ile 'Akıllı Açılır Pencere' ve günlük pasta grafikleri ile haftalık çubuk grafikler dahil gelişmiş analitik özellikleri içerir. Ayarlanabilir eşikler, veri saklama politikaları, özel uygulama-kategori eşlemeleri ve Koyu/Açık/Sistem tema geçişi ile derin özelleştirmeyi destekler.",
+    "techStack": ["Python 3.10+", "CustomTkinter", "SQLite", "Windows API", "Matplotlib", "PyInstaller"],
+    "status": "RELEASED // v1.0 STEAMPUNK",
+    "status_tr": "SÜRÜM // v1.0 BUKHAR PUNK",
+    "links": {
+      "source": "https://github.com/MuharremTozan/Time-Reporter"
     }
   }
 ]

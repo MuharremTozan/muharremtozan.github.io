@@ -5,7 +5,7 @@ export default function ContactCommLink({ ui, currentLang }) {
   const [copied, setCopied] = useState(false);
   
   // Professional details
-  const emailAddress = "mtozan.dev@gmail.com"; // Professional email contact
+  const emailAddress = "muharremtozan@hotmail.com"; // Professional email contact
   const linkedinUrl = "https://www.linkedin.com/in/muharrem-tozan-3658b1222/"; // Updated to user's LinkedIn
   const githubUrl = "https://github.com/MuharremTozan"; // Updated to user's GitHub
 
